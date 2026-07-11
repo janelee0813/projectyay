@@ -24,7 +24,7 @@ const config: Config = {
       },
       fontFamily: {
         kr: ["var(--font-kr)", "Pretendard", "SUIT", "Noto Sans KR", "sans-serif"],
-        en: ["var(--font-en)", "var(--font-kr)", "sans-serif"]
+        en: ["var(--font-kr)", "Pretendard", "SUIT", "Noto Sans KR", "sans-serif"]
       },
       maxWidth: {
         content: "1440px"

@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
 import { MotionConfig } from "framer-motion";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-en",
-  display: "swap"
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -75,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="ko" className={spaceGrotesk.variable}>
+    <html lang="ko">
       <body className="font-kr antialiased">
         <script
           type="application/ld+json"

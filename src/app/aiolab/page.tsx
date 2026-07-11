@@ -115,7 +115,7 @@ export default function AiolabPage() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {aiolabFeatures.map((f, i) => (
               <Reveal key={f} delay={Math.min(i * 0.05, 0.3)}>
-                <div className="rounded-2xl border border-bg-mute p-6 h-full">
+                <div className="rounded-2xl border border-glow-blue/25 p-6 h-full">
                   <span className="font-en text-xs font-semibold text-ink-soft/40">
                     {String(i + 1).padStart(2, "0")}
                   </span>

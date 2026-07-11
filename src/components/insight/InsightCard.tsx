@@ -7,7 +7,7 @@ export default function InsightCard({ post }: { post: InsightPost }) {
   return (
     <Link
       href={`/insight/${post.slug}`}
-      className="group block rounded-2xl overflow-hidden border border-bg-mute bg-white transition-shadow duration-500 ease-glow hover:shadow-[0_28px_64px_-24px_rgba(24,24,27,0.18)]"
+      className="group block rounded-2xl overflow-hidden border border-glow-blue/25 bg-white transition-all duration-500 ease-glow hover:border-transparent hover:shadow-[0_28px_64px_-24px_rgba(83,124,255,0.22)]"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <GradientVisual

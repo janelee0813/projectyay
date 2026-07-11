@@ -128,7 +128,7 @@ export default function AboutPage() {
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map((member, i) => (
               <Reveal key={member.slug} delay={Math.min(i * 0.08, 0.3)}>
-                <div className="rounded-2xl border border-bg-mute p-7">
+                <div className="rounded-2xl border border-glow-blue/25 p-7">
                   <div
                     className="w-16 h-16 rounded-full flex items-center justify-center font-en font-bold text-white text-lg mb-6"
                     style={{

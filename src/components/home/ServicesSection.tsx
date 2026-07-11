@@ -25,7 +25,7 @@ export default function ServicesSection() {
             <Reveal key={service.slug} delay={Math.min(i * 0.06, 0.3)}>
               <Link
                 href={`/services#${service.slug}`}
-                className="group block h-full rounded-3xl border border-bg-mute bg-white p-7 md:p-8 transition-all duration-500 ease-glow hover:border-transparent hover:shadow-[0_24px_60px_-20px_rgba(83,124,255,0.25)]"
+                className="group block h-full rounded-3xl border border-glow-blue/25 bg-white p-7 md:p-8 transition-all duration-500 ease-glow hover:border-transparent hover:shadow-[0_24px_60px_-20px_rgba(83,124,255,0.25)]"
               >
                 <div className="flex items-start justify-between mb-8">
                   <span className="font-en text-sm font-semibold text-ink-soft/60">
