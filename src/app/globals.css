@@ -1,0 +1,194 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.dynamic.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-kr: "Pretendard Variable";
+  --color-bg: #ffffff;
+  --color-bg-soft: #f5f5f5;
+  --color-bg-mute: #ececec;
+  --color-ink: #18181b;
+  --color-ink-soft: #4a4a4f;
+
+  --glow-sky: #8ccbff;
+  --glow-blue: #537cff;
+  --glow-cyan: #65e6ef;
+  --glow-lavender: #c6a7ff;
+  --glow-pink: #f1a9e9;
+
+  --header-h: 76px;
+  --ease-glow: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  border-color: var(--color-bg-mute);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--glow-lavender);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--glow-blue);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------
+   Component-level classes live in @layer components
+   so that plain Tailwind utility classes (e.g. "absolute inset-0"
+   passed via className) always win when combined on the same element.
+--------------------------------------------- */
+@layer components {
+  .container-yay {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .container-yay {
+      padding-inline: 40px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-yay {
+      padding-inline: 64px;
+    }
+  }
+
+  /* Sphere Object — brand signature visual */
+  .sphere-object {
+    position: relative;
+    --glow-x: 70%;
+    --glow-y: 30%;
+    will-change: transform;
+  }
+
+  .sphere-object.hero {
+    filter: drop-shadow(0 40px 80px rgba(83, 124, 255, 0.18));
+  }
+
+  .sphere-glow {
+    position: absolute;
+    inset: -30%;
+    background: radial-gradient(
+      circle at var(--glow-x) var(--glow-y),
+      rgba(140, 203, 255, 0.55),
+      rgba(198, 167, 255, 0.35) 35%,
+      rgba(241, 169, 233, 0.18) 55%,
+      transparent 75%
+    );
+    filter: blur(48px);
+    transition: background 0.4s var(--ease-glow);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .sphere-core {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .sphere-core svg {
+    display: block;
+  }
+
+  /* idle drift for reduced-interaction contexts (mobile / no fine pointer) */
+  .animate-drift {
+    animation: drift 20s var(--ease-glow) infinite;
+  }
+
+  /* Abstract gradient visuals (project / video / insight cards) */
+  .gradient-visual {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .gradient-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* Header scroll state */
+  .site-header {
+    transition: background-color 0.5s var(--ease-glow), backdrop-filter 0.5s var(--ease-glow),
+      border-color 0.5s var(--ease-glow);
+  }
+
+  .site-header[data-scrolled="true"] {
+    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(24, 24, 27, 0.06);
+  }
+
+  /* number count-up tabular figures */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* skip link */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: var(--color-ink);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 0 0 8px 0;
+  }
+
+  .skip-link:focus {
+    left: 0;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
