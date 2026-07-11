@@ -6,7 +6,11 @@ import GradientVisual from "@/components/ui/GradientVisual";
 
 export default function ServicesSection() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="relative py-24 md:py-32 overflow-hidden">
+      <div
+        className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-glow-blue/10 blur-[100px] -z-10"
+        aria-hidden="true"
+      />
       <div className="container-yay">
         <SectionHeading
           eyebrow="Services"
@@ -28,7 +32,7 @@ export default function ServicesSection() {
                 className="group block h-full rounded-3xl border border-glow-blue/25 bg-white p-7 md:p-8 transition-all duration-500 ease-glow hover:border-transparent hover:shadow-[0_24px_60px_-20px_rgba(83,124,255,0.25)]"
               >
                 <div className="flex items-start justify-between mb-8">
-                  <span className="font-en text-sm font-semibold text-ink-soft/60">
+                  <span className="font-en text-sm font-semibold text-glow-blue/80">
                     {service.index}
                   </span>
                   <div className="w-10 h-10 rounded-full gradient-visual overflow-hidden">

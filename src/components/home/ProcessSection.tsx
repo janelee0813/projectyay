@@ -30,9 +30,9 @@ export default function ProcessSection() {
 
         {/* Desktop */}
         <div ref={trackRef} className="hidden lg:block mt-20 relative">
-          <div className="absolute top-[15px] left-0 right-0 h-px bg-ink/10" aria-hidden="true" />
+          <div className="absolute top-[15px] left-0 right-0 h-px bg-glow-blue/15" aria-hidden="true" />
           <motion.div
-            className="absolute top-[15px] left-0 h-px bg-ink origin-left"
+            className="absolute top-[15px] left-0 h-px bg-glow-blue origin-left"
             style={{ scaleX: lineScale, right: 0 }}
             aria-hidden="true"
           />
@@ -41,10 +41,10 @@ export default function ProcessSection() {
               <Reveal key={step.index} delay={i * 0.08}>
                 <div className="relative pt-10">
                   <span
-                    className="absolute top-0 left-0 w-[9px] h-[9px] rounded-full bg-ink"
+                    className="absolute top-0 left-0 w-[9px] h-[9px] rounded-full bg-glow-blue ring-4 ring-glow-blue/15"
                     aria-hidden="true"
                   />
-                  <p className="font-en text-xs font-semibold text-ink-soft/50 mb-2">
+                  <p className="font-en text-xs font-semibold text-glow-blue/80 mb-2">
                     {step.index}
                   </p>
                   <h3 className="font-en font-bold text-xl text-ink tracking-tight">
@@ -67,14 +67,14 @@ export default function ProcessSection() {
         </div>
 
         {/* Mobile / Tablet: vertical timeline */}
-        <ol className="lg:hidden mt-14 relative border-l border-ink/10 pl-8 space-y-12">
+        <ol className="lg:hidden mt-14 relative border-l border-glow-blue/15 pl-8 space-y-12">
           {processSteps.map((step, i) => (
             <Reveal key={step.index} delay={Math.min(i * 0.06, 0.24)} as="li" className="relative">
               <span
-                className="absolute -left-[calc(2rem+4px)] top-1 w-2 h-2 rounded-full bg-ink"
+                className="absolute -left-[calc(2rem+4px)] top-1 w-2 h-2 rounded-full bg-glow-blue ring-4 ring-glow-blue/15"
                 aria-hidden="true"
               />
-              <p className="font-en text-xs font-semibold text-ink-soft/50 mb-1">
+              <p className="font-en text-xs font-semibold text-glow-blue/80 mb-1">
                 {step.index}
               </p>
               <h3 className="font-en font-bold text-xl text-ink tracking-tight">

@@ -10,7 +10,11 @@ export default function SelectedWork() {
     .slice(0, 6);
 
   return (
-    <section className="py-24 md:py-32 bg-bg-soft">
+    <section className="relative py-24 md:py-32 bg-bg-soft overflow-hidden">
+      <div
+        className="absolute -top-40 left-1/3 w-[560px] h-[560px] rounded-full bg-glow-blue/[0.07] blur-[110px] -z-10"
+        aria-hidden="true"
+      />
       <div className="container-yay">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <SectionHeading

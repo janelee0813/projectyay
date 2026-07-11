@@ -5,7 +5,11 @@ import { differentiators, stats } from "@/data/stats";
 
 export default function WhyProjectYay() {
   return (
-    <section className="py-24 md:py-32 bg-bg-soft">
+    <section className="relative py-24 md:py-32 bg-bg-soft overflow-hidden">
+      <div
+        className="absolute top-1/2 -right-40 -translate-y-1/2 w-[620px] h-[620px] rounded-full bg-glow-blue/[0.08] blur-[110px] -z-10"
+        aria-hidden="true"
+      />
       <div className="container-yay">
         <SectionHeading
           eyebrow="Why project yay"
@@ -17,8 +21,8 @@ export default function WhyProjectYay() {
           <ul className="space-y-8">
             {differentiators.map((d, i) => (
               <Reveal key={d.title} delay={Math.min(i * 0.06, 0.3)}>
-                <li className="flex gap-5 pb-8 border-b border-ink/10 last:border-none">
-                  <span className="font-en font-bold text-ink-soft/40 text-lg pt-0.5">
+                <li className="flex gap-5 pb-8 border-b border-glow-blue/15 last:border-none">
+                  <span className="font-en font-bold text-glow-blue/60 text-lg pt-0.5">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
@@ -39,8 +43,8 @@ export default function WhyProjectYay() {
               const [numberLabel, subLabel] = stat.label.split("\n");
               return (
                 <Reveal key={stat.label} delay={0.1 + i * 0.08}>
-                  <div className="lg:border-l lg:border-ink/10 lg:pl-8">
-                    <p className="font-en font-bold text-ink text-[clamp(2.5rem,5vw,4rem)] leading-none">
+                  <div className="lg:border-l lg:border-glow-blue/20 lg:pl-8">
+                    <p className="font-en font-bold text-glow-blue text-[clamp(2.5rem,5vw,4rem)] leading-none">
                       <CountUp value={stat.value} suffix={stat.suffix} />
                     </p>
                     <p className="mt-2 text-sm text-ink-soft">

@@ -8,7 +8,11 @@ export default function FilmContent() {
   const rest = videos.filter((v) => v.slug !== featured.slug).slice(0, 4);
 
   return (
-    <section className="py-24 md:py-32">
+    <section className="relative py-24 md:py-32 overflow-hidden">
+      <div
+        className="absolute -bottom-40 -left-32 w-[560px] h-[560px] rounded-full bg-glow-blue/10 blur-[100px] -z-10"
+        aria-hidden="true"
+      />
       <div className="container-yay">
         <SectionHeading
           eyebrow="Film & Content"
