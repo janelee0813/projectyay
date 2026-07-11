@@ -32,9 +32,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            We Architect
+            MARKETING ARCHITECT
             <br />
-            Growth.
+            PROJECT YAY
           </motion.h1>
 
           <motion.p
