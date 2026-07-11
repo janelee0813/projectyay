@@ -25,9 +25,9 @@ export default function Hero() {
       </div>
 
       <div className="container-yay py-16 lg:py-0">
-        <div className="max-w-2xl">
+        <div>
           <motion.h1
-            className="font-en font-bold tracking-tight text-ink text-[clamp(2.5rem,7vw,5.25rem)] leading-[1.03]"
+            className="font-en font-bold tracking-tight text-ink text-[clamp(1.7rem,6.2vw,5.25rem)] leading-[1.05] whitespace-nowrap"
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}

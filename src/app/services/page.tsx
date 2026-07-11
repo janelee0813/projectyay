@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
-import Button from "@/components/ui/Button";
 import GradientVisual from "@/components/ui/GradientVisual";
 import { services } from "@/data/services";
 import { getProjectBySlug } from "@/data/projects";
@@ -174,10 +173,6 @@ export default function ServicesPage() {
                       </div>
                     </Reveal>
                   )}
-
-                  <Reveal delay={0.25}>
-                    <Button href="/contact">이 서비스 문의하기</Button>
-                  </Reveal>
                 </div>
               </div>
             </section>
