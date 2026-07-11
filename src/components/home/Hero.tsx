@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
-import SphereObject from "@/components/ui/SphereObject";
 
 const keywords = ["STRATEGY", "BRANDING", "CAMPAIGN", "PR", "CONTENT", "FILM", "AI"];
 
@@ -12,8 +12,20 @@ export default function Hero() {
       className="relative overflow-hidden flex items-center"
       style={{ minHeight: "92vh", paddingTop: "var(--header-h)" }}
     >
-      <div className="container-yay grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center py-16 lg:py-0">
-        <div className="lg:col-span-7 order-2 lg:order-1">
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/hero-bg.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/30" />
+      </div>
+
+      <div className="container-yay py-16 lg:py-0">
+        <div className="max-w-2xl">
           <motion.h1
             className="font-en font-bold tracking-tight text-ink text-[clamp(2.5rem,7vw,5.25rem)] leading-[1.03]"
             initial={{ opacity: 0, y: 36 }}
@@ -68,10 +80,6 @@ export default function Hero() {
               Start a Project
             </Button>
           </motion.div>
-        </div>
-
-        <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end">
-          <SphereObject size={440} variant="hero" tone="sky-blue" />
         </div>
       </div>
     </section>
