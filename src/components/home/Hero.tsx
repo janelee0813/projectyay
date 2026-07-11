@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Button from "@/components/ui/Button";
 
 const keywords = ["STRATEGY", "BRANDING", "CAMPAIGN", "PR", "CONTENT", "FILM", "AI"];
@@ -12,17 +11,14 @@ export default function Hero() {
       className="relative overflow-hidden flex items-center"
       style={{ minHeight: "92vh", paddingTop: "var(--header-h)" }}
     >
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/images/hero-bg.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/30" />
-      </div>
+      <div
+        className="absolute inset-0 -z-10 bg-white"
+        style={{
+          backgroundImage:
+            "radial-gradient(60% 55% at 88% 10%, rgba(140,203,255,0.5), transparent 70%), radial-gradient(50% 45% at 100% 85%, rgba(198,167,255,0.35), transparent 70%), radial-gradient(40% 40% at 60% 100%, rgba(101,230,239,0.18), transparent 70%)"
+        }}
+        aria-hidden="true"
+      />
 
       <div className="container-yay py-16 lg:py-0">
         <div>

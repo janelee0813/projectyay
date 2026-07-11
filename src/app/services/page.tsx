@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 import GradientVisual from "@/components/ui/GradientVisual";
@@ -53,19 +52,26 @@ export default function ServicesPage() {
       </div>
 
       {/* Quick jump nav */}
-      <div className="sticky top-[var(--header-h)] z-30 bg-white/85 backdrop-blur-md border-y border-bg-mute">
+      <div className="container-yay pb-16 md:pb-20">
         <nav
-          className="container-yay flex gap-6 overflow-x-auto py-4 no-scrollbar"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4"
           aria-label="서비스 빠른 이동"
         >
-          {services.map((s) => (
-            <a
-              key={s.slug}
-              href={`#${s.slug}`}
-              className="text-sm font-medium text-ink-soft hover:text-ink whitespace-nowrap transition-colors"
-            >
-              {s.index} {s.shortTitle}
-            </a>
+          {services.map((s, i) => (
+            <Reveal key={s.slug} delay={Math.min(i * 0.05, 0.25)}>
+              <a
+                href={`#${s.slug}`}
+                className="group flex flex-col justify-between gap-6 min-h-[110px] rounded-2xl p-5 text-white shadow-[0_16px_32px_-16px_rgba(83,124,255,0.5)] transition-transform duration-300 ease-glow hover:-translate-y-1"
+                style={{ background: "linear-gradient(135deg, #8CCBFF 0%, #537CFF 100%)" }}
+              >
+                <span className="font-en text-xs font-semibold tracking-[0.15em] text-white/75">
+                  {s.index}
+                </span>
+                <span className="font-en font-bold text-sm md:text-base leading-snug">
+                  {s.shortTitle}
+                </span>
+              </a>
+            </Reveal>
           ))}
         </nav>
       </div>
@@ -77,24 +83,26 @@ export default function ServicesPage() {
             .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
           return (
-            <section key={service.slug} id={service.slug} className="py-20 md:py-28 scroll-mt-32">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-                <div className="lg:col-span-4">
-                  <Reveal>
-                    <div className="w-14 h-14 rounded-2xl overflow-hidden mb-6">
+            <section key={service.slug} id={service.slug} className="py-16 md:py-20 scroll-mt-24">
+              <div className="max-w-3xl space-y-10">
+                <Reveal>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0">
                       <GradientVisual tone={service.tone} shape="orb" />
                     </div>
-                    <p className="font-en text-sm font-semibold text-ink-soft/50 mb-2">
-                      {service.index}
-                    </p>
-                    <h2 className="font-en font-bold text-3xl md:text-4xl text-ink tracking-tight">
-                      {service.title}
-                    </h2>
-                    <p className="mt-4 text-ink-soft leading-relaxed">{service.description}</p>
-                  </Reveal>
-                </div>
+                    <div>
+                      <p className="font-en text-xs font-semibold text-glow-blue/80">
+                        {service.index}
+                      </p>
+                      <h2 className="font-en font-bold text-2xl md:text-3xl text-ink tracking-tight">
+                        {service.title}
+                      </h2>
+                    </div>
+                  </div>
+                  <p className="mt-5 text-ink-soft leading-relaxed">{service.description}</p>
+                </Reveal>
 
-                <div className="lg:col-span-8 space-y-10">
+                <div className="space-y-10">
                   {service.problem && (
                     <Reveal>
                       <div className="rounded-2xl bg-bg-soft p-6 md:p-8">
