@@ -28,9 +28,12 @@ export default function BrandStatement() {
           </Reveal>
           <motion.span
             aria-hidden="true"
-            className="inline-block rounded-full bg-[radial-gradient(circle_at_35%_30%,#8CCBFF,#537CFF_55%,#C6A7FF)]"
+            className="relative inline-block"
             style={{ width: 22, height: 22, scale, opacity }}
-          />
+          >
+            <span className="absolute left-0 right-0 top-1/2 h-[6px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_35%_30%,#8CCBFF,#537CFF_55%,#C6A7FF)]" />
+            <span className="absolute top-0 bottom-0 left-1/2 w-[6px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_35%_30%,#8CCBFF,#537CFF_55%,#C6A7FF)]" />
+          </motion.span>
           <Reveal as="span" className="inline-block" delay={0.1}>
             ING
           </Reveal>
