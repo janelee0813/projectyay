@@ -35,12 +35,18 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {mainNav.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-ink-soft hover:text-ink transition-colors"
-                  >
-                    {item.label}
-                  </Link>
+                  {item.href === "/about" ? (
+                    <span className="text-sm text-ink-soft/40 select-none" aria-disabled="true">
+                      {item.label}
+                    </span>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-sm text-ink-soft hover:text-ink transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

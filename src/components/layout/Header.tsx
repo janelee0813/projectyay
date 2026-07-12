@@ -53,6 +53,17 @@ export default function Header() {
 
           <nav className="hidden md:flex items-center gap-9" aria-label="주요 메뉴">
             {mainNav.map((item) => {
+              if (item.href === "/about") {
+                return (
+                  <span
+                    key={item.href}
+                    className="text-sm font-medium tracking-tight text-ink-soft/50 cursor-default select-none"
+                    aria-disabled="true"
+                  >
+                    {item.label}
+                  </span>
+                );
+              }
               const active = pathname === item.href || pathname.startsWith(item.href + "/");
               return (
                 <Link

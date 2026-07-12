@@ -7,6 +7,7 @@ import ProcessSection from "@/components/home/ProcessSection";
 import SelectedWork from "@/components/home/SelectedWork";
 import FilmContent from "@/components/home/FilmContent";
 import AiolabSection from "@/components/home/AiolabSection";
+import TeamSection from "@/components/home/TeamSection";
 import ClientsSection from "@/components/home/ClientsSection";
 import ContactCTA from "@/components/home/ContactCTA";
 import { siteConfig } from "@/data/site";
@@ -28,6 +29,7 @@ export default function HomePage() {
       <SelectedWork />
       <FilmContent />
       <AiolabSection />
+      <TeamSection />
       <ClientsSection />
       <ContactCTA />
     </>

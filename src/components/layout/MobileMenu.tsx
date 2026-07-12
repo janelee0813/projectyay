@@ -12,6 +12,7 @@ type MobileMenuProps = {
 export default function MobileMenu({ onClose }: MobileMenuProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const firstLinkIndex = mainNav.findIndex((item) => item.href !== "/about");
 
   useEffect(() => {
     firstLinkRef.current?.focus();
@@ -65,14 +66,23 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 * i, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Link
-                href={item.href}
-                ref={i === 0 ? firstLinkRef : undefined}
-                onClick={onClose}
-                className="block py-4 text-4xl font-en font-bold tracking-tight text-ink border-b border-bg-mute"
-              >
-                {item.label}
-              </Link>
+              {item.href === "/about" ? (
+                <span
+                  className="block py-4 text-4xl font-en font-bold tracking-tight text-ink/40 border-b border-bg-mute select-none"
+                  aria-disabled="true"
+                >
+                  {item.label}
+                </span>
+              ) : (
+                <Link
+                  href={item.href}
+                  ref={i === firstLinkIndex ? firstLinkRef : undefined}
+                  onClick={onClose}
+                  className="block py-4 text-4xl font-en font-bold tracking-tight text-ink border-b border-bg-mute"
+                >
+                  {item.label}
+                </Link>
+              )}
             </motion.li>
           ))}
         </ul>

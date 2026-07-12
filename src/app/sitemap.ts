@@ -6,7 +6,6 @@ import { getPublishedInsights } from "@/data/insights";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
-    "/about",
     "/services",
     "/work",
     "/aiolab",
