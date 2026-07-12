@@ -10,7 +10,7 @@ export default function ProcessSection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: trackRef,
-    offset: ["start 0.75", "end 0.4"]
+    offset: ["start 0.75", "center center"]
   });
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
