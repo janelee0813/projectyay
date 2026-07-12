@@ -51,8 +51,14 @@ export default function BrandStatement() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-base md:text-lg text-ink-soft leading-relaxed">
-              project yay는 브랜드가 가진 가능성을 발견하고, 데이터와 인사이트를
-              바탕으로 전략을 설계하며, 콘텐츠와 실행을 통해 성장을 만들어갑니다.
+              장기적 성장을 위해 고도화된 전략을 제시하고 실행하고
+              <br />
+              그 결과를 반영해 진화를 거듭하는 브랜드로 만들어 드리겠습니다.
+            </p>
+            <p className="mt-5 text-base md:text-lg text-ink-soft leading-relaxed">
+              치열하게 분석하고 세심하게 고민하겠습니다.
+              <br />
+              깊이 있는 전문성에 진심을 더해 감탄을 자아내는 결과물을 약속 드립니다.
             </p>
           </Reveal>
         </div>
