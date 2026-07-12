@@ -86,20 +86,18 @@ export default function ServicesPage() {
             <section key={service.slug} id={service.slug} className="py-16 md:py-20 scroll-mt-24">
               <div className="max-w-3xl space-y-10">
                 <Reveal>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-11 h-11 rounded-xl overflow-hidden shrink-0">
                       <GradientVisual tone={service.tone} shape="orb" />
                     </div>
-                    <div>
-                      <p className="font-en text-xs font-semibold text-glow-blue/80">
-                        {service.index}
-                      </p>
-                      <h2 className="font-en font-bold text-2xl md:text-3xl text-ink tracking-tight">
-                        {service.title}
-                      </h2>
-                    </div>
+                    <span className="font-en text-xs font-bold tracking-[0.15em] text-white bg-glow-blue rounded-full px-3 py-1 leading-none">
+                      {service.index}
+                    </span>
                   </div>
-                  <p className="mt-5 text-ink-soft leading-relaxed">{service.description}</p>
+                  <h2 className="font-en font-extrabold tracking-tight leading-[1.05] text-[clamp(2rem,5vw,3.5rem)] bg-gradient-to-r from-ink to-glow-blue bg-clip-text text-transparent">
+                    {service.title}
+                  </h2>
+                  <p className="mt-5 text-ink-soft leading-relaxed max-w-xl">{service.description}</p>
                 </Reveal>
 
                 <div className="space-y-10">

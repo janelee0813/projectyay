@@ -18,7 +18,7 @@ export default function GradientVisual({ tone, className, shape = "blob" }: Grad
   const [c1, c2, c3] = gradientTones[tone];
 
   return (
-    <div className={cn("gradient-visual", className)}>
+    <div className={cn("gradient-visual w-full h-full", className)}>
       <svg
         viewBox="0 0 400 300"
         width="100%"
